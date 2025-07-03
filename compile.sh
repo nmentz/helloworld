@@ -24,3 +24,4 @@ case "$1" in
 esac
 
 ibv_devices
+rdma link show
