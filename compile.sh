@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo "run ip link to find device name then pass in to this command e.g. device name is enp0s3 'sudo rdma link add rxe0 type rxe netdev enp0s3'"
-
+if ! rdma link add rxe0 type rxe netdev enp0s3 ; then
+    exit 1
+fi
 
 if ! modprobe rdma_rxe; then
     exit 1
@@ -21,3 +22,5 @@ case "$1" in
         exit 1
         ;;
 esac
+
+ibv_devices
