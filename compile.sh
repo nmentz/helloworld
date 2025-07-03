@@ -1,7 +1,9 @@
 #!/bin/bash
 
+echo "run ip link to find device name then pass in to this command e.g. device name is enp0s3 'sudo rdma link add rxe0 type rxe netdev enp0s3'"
+
+
 if ! modprobe rdma_rxe; then
-    echo "failed to load rdma_rxe module"
     exit 1
 fi
 
