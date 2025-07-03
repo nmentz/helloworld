@@ -1,4 +1,10 @@
 #!/bin/bash
+
+if ! modprobe rdma_rxe; then
+    echo "failed to load rdma_rxe module"
+    exit 1
+fi
+
 set -e
 
 case "$1" in
